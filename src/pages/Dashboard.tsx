@@ -18,8 +18,10 @@ export function Dashboard() {
   const [creating, setCreating] = useState(false);
 
   useEffect(() => {
+    if (!user) return; // wait for auth to load
     loadProjects();
-  }, []);
+  }, [user]);
+
 
   const loadProjects = async () => {
     setLoading(true);
