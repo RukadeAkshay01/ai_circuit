@@ -27,7 +27,9 @@ function AppRoutes() {
         path="/dashboard"
         element={
           <ProtectedRoute>
-            <Dashboard />
+            <ProjectProvider>
+              <Dashboard />
+            </ProjectProvider>
           </ProtectedRoute>
         }
       />
